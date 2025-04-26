@@ -16,6 +16,13 @@ import java.util.Random;
  * @since 2025-04-25
  */
 public final class TwoDArrays {
+
+    /**Constant for max grade.*/
+    private static final int MAX_GRADE = 100;
+    /**Constant for deviation.*/
+    private static final int DEVIATION = 10;
+    /**Constant for mean.*/
+    private static final int MEAN = 75;
     /**
      * This is to satisfy the style checker.
      * @exception IllegalStateException Utility class.
@@ -115,9 +122,9 @@ public final class TwoDArrays {
             results[i][0] = studentArray.get(i);
 
             for (int j = 0; j < numAssignments; j++) {
-                double mark = random.nextGaussian() * 10 + 75;
+                double mark = random.nextGaussian() * DEVIATION + MEAN;
                 int finalMark = Math.max(0, Math.min(
-                    100, (int) Math.round(mark)));
+                    MAX_GRADE, (int) Math.round(mark)));
                 results[i][j + 1] = String.valueOf(finalMark);
             }
         }
